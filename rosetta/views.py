@@ -60,7 +60,7 @@ def home(request):
                 entry.md5hash = hashlib.md5(
                     entry.msgid.encode("utf8") +
                     entry.msgstr.encode("utf8") +
-                    (entry.msgctxt and entry.msgctxt.encode("utf8") or "") 
+                    (entry.msgctxt and entry.msgctxt.encode("utf8") or "")
                 ).hexdigest()
 
         else:
@@ -231,7 +231,7 @@ def home(request):
                 page_range = range(1, 1 + paginator.num_pages)
         try:
             ADMIN_MEDIA_PREFIX = settings.ADMIN_MEDIA_PREFIX
-            ADMIN_IMAGE_DIR = ADMIN_MEDIA_PREFIX + 'img/admin/'
+            ADMIN_IMAGE_DIR = ADMIN_MEDIA_PREFIX + 'img'
         except AttributeError:
             ADMIN_MEDIA_PREFIX = settings.STATIC_URL + 'admin/'
             ADMIN_IMAGE_DIR = ADMIN_MEDIA_PREFIX + 'img/'
